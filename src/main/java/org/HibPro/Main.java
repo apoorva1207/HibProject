@@ -12,16 +12,13 @@ public class Main {
 
 
         Student s1 = new Student();
-        s1.setRollid(102);
-        s1.setName("Navin");
+        s1.setRollid(103);
+        s1.setName("Apoorva");
         s1.setCollege("GGCT");
 
         // System.out.println(s1);
 
-     Configuration cfg = new Configuration();
-        cfg.addAnnotatedClass(Student.class);
-        cfg.configure("hibernate.cfg.xml");
-        SessionFactory sessionFactory = cfg.buildSessionFactory();
+        SessionFactory sessionFactory =  new Configuration().addAnnotatedClass(Student.class).configure().buildSessionFactory();            //cfg.buildSessionFactory();
         Session session = sessionFactory.openSession();
 
         Transaction transaction = session.beginTransaction();
